@@ -1,0 +1,20 @@
+.listQue{
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.listQue a, .scrollarea{
+    border-right: 1px solid rgba(34, 34, 34, 0.295);
+}
+.videoPage{
+    display: flex;
+    flex-direction: row;
+}
+
+.videoLink{
+    width: fit-content;
+}
+
+
+
+

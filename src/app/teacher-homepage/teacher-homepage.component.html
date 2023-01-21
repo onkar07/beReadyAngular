@@ -1,0 +1,133 @@
+<div class="container">
+  <div class="row my-4">
+    <div class="col-8">
+      <form class="row">
+        <div class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-4">
+      <div class="row">
+        <div class="d-flex justify-content-end">
+          <button type="button" style="width: fit-content;" class="btn btn-primary mx-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Add New Question
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="col-12 queTable">
+     
+      <table class="table">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Series</th>
+            <th scope="col">Question</th>
+            <th scope="col">Link</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sub of questions.data; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{sub[1]}}</td>
+            <td>{{sub[3]}}</td>
+            <td>{{sub[6]}}</td>
+            <td><span class="mr-2" data-bs-toggle="modal" (click)="updateQueId(sub[0])" data-bs-target="#updateQueModal"><img [src]="edit" alt=""></span>
+              <span class="mx-2"><img [src]="deleteIcon" alt=""></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add Question</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Select Subject</label>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Enter Question</label>
+              <input class="form-control" id="exampleFormControlTextarea1" rows="3"/>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter Question</label>
+            <input class="form-control" id="exampleFormControlTextarea1" rows="3"/>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter Link</label>
+            <input class="form-control" id="exampleFormControlTextarea1" rows="3"/>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal for update functionality-->
+<div class="modal fade" id="updateQueModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="updateQueModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateQueModalLabel">Update Question</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="updateForm" >
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter Subject</label>
+            <input type="text" class="form-control" name="updatedSubject" formControlName="updatedSubject" id="exampleFormControlTextarea1" rows="3"/>
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label" >Enter Question</label>
+            <input class="form-control" name="updatedQuestion" formControlName="updatedQuestion" id="exampleFormControlTextarea1" rows="3"/>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label" >Enter Link</label>
+            <input class="form-control" id="exampleFormControlTextarea1" formControlName="updatedLink" rows="3"/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="openUpdate()">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

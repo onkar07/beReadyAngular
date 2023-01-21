@@ -1,0 +1,15 @@
+.logoDiv img{
+    width: 30%;
+    border: 3px solid whitesmoke;
+    border-radius: 50%;
+}
+.logoDiv{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.logoDiv h2{
+    letter-spacing: 2px;
+}

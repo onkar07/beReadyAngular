@@ -1,0 +1,65 @@
+
+.subjects-sections h2{
+    color:#000f38;
+    padding: 30px 20px 50px;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 700;
+    line-height: 3rem;
+    font-size: 38px;
+}
+.subject-row{
+    width:75%;
+    margin: 0 auto;
+    justify-content: center
+}
+.subject-row h6{
+    text-align: center;
+    color:#000f38;
+    padding-bottom: 20px;
+}
+.subject-single{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    margin: 0 auto;
+    margin: 20px;
+}
+.subject-column:hover{
+    background-color: #ecf1f8;
+    border-radius: 10px;
+}
+.cardRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: scroll;
+    height: 500px; 
+    margin-bottom: 10%;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+.card{
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+.card img{
+    width: 80%;
+    margin-top: 4%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .example {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }

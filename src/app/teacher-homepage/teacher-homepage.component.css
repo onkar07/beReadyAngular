@@ -1,0 +1,8 @@
+/* .queTable{
+    border: 1px solid rgba(73, 73, 162, 0.586);
+    border-radius: .5rem;
+} */
+
+tr:last-child{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.406);
+}

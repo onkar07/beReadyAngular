@@ -1,0 +1,47 @@
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary justify-content-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add Subject
+</button>
+  <table class="table">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Series</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sub of subjectList.data; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{sub[1]}}</td>
+        <td><span class="mr-2"><img [src]="edit" alt=""></span>
+          <span class="mx-2"><img [src]="deleteIcon" alt="" (click)="deleteSubject(sub[0])" ></span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Subject</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Subject</mat-label>
+            <input type="text" matInput #subject (keyup)="getSubject(subject.value)"
+                   placeholder="python">
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="submit($event)" data-bs-dismiss="modal">Add Subject</button>
+      </div>
+    </div>
+  </div>
+</div>

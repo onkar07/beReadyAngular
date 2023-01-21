@@ -1,0 +1,7 @@
+footer{
+    position:fixed;
+    bottom:0px;
+    background-color:pink;
+    width:100%;
+    border-top: 1px solid rgba(140, 139, 139, 0.279);
+    }

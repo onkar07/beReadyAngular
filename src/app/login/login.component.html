@@ -1,0 +1,29 @@
+<div class="loginComp">
+    <mat-card class="example-card">
+        <mat-card-title-group class="my-2">
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content>
+            <form class="example-form" >
+                <mat-form-field class="example-full-width mt-2" appearance="outline">
+                  <mat-label >Login Id</mat-label>
+                  <input matInput #email (keyup)="getUserId(email.value)"  placeholder="User name">
+                </mat-form-field>
+              
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput #pass (keyup)="getPassword(pass.value)"  >
+                  </mat-form-field>
+                <div class="matButton my-2">
+                    <button mat-raised-button color="primary" (click)="login_Auth($event)">Login</button>
+                </div>
+                <!-- <div class="matButton my-2">
+                  <button (click)="demo()" mat-raised-button color="primary">demo</button>
+              </div> -->
+              </form>
+              
+        </mat-card-content>
+      </mat-card>
+     
+</div>
+  

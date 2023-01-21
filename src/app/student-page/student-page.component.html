@@ -1,0 +1,20 @@
+<section class="subjects-sections mt-5">
+    <div class="container">
+        <h2 class="mb-3">
+            Select Subjects from Over
+            {{subArray.length}} Different Subject Titles
+        </h2>
+        <div class="row" style="justify-content: center;">
+            <div class="col-7 cardRow">
+                <div class="repeatDiv mx-2"  *ngFor="let sub of subArray">
+                    <div class="card text-center my-2" style="width: 10rem;" (click)="getQuestions(sub[0])" routerLink='"videoPage/?queId="+{{sub[0]}}'>
+                        <img [src]="imagePath" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title"><b>{{sub[1]}}</b></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
